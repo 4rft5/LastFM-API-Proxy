@@ -1,0 +1,16 @@
+services:
+  lastfm-proxy:
+    build: .
+    container_name: lastfm-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data:/data
+      - ./certs:/app/certs
+    environment:
+      - LASTFM_API_KEY=exampleapikey
+      - LASTFM_API_SECRET=exampleapisecret
+      - DB_PATH=/data/scrobbles.db
+      - RETENTION_PERIOD=month
+    restart: unless-stopped
