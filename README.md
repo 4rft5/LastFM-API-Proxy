@@ -2,7 +2,7 @@
 An open source reimplementation of the LastFM API that can be hosted locally.
 
 # Information
-This is a local implementation of the LastFM API intended for use with Multi-Scrobbler and Navidrome, and possibly more services if configured correctly.
+This is a local implementation of the LastFM API intended for use with <a href="https://github.com/navidrome/navidrome">Navidrome</a> and <a href="https://github.com/FoxxMD/multi-scrobbler">Multi-Scrobbler</a> and possibly more services if configured correctly.
 
 As of right now, Navidrome does not directly scrobble plays reliably when offline, causing issues when either using third party clients or apps. However, offline scrobbles are correctly passed when using the built in LastFM (and potentially ListenBrainz) APIs in Navidrome.
 
