@@ -41,16 +41,16 @@ I do not have any affiliation with or connection to LastFM Ltd, CBS Interactive 
 ```
 - /path/to/lastfm-proxy.crt:/usr/local/share/ca-certificates/lastfm-proxy.crt:ro
 ```
-4. Add the entrypoint in Compose to add the cert to Navidrome:
+3. Add the entrypoint in Compose to add the cert to Navidrome:
 ```
 entrypoint: sh -c "apk add --no-cache ca-certificates && update-ca-certificates && /app/navidrome"
 ```
-5. Lastly, add the new host for `ws.audioscrobbler.com` with the host IP of where the Proxy is: 
+4. Lastly, add the new host for `ws.audioscrobbler.com` with the host IP of where the Proxy is: 
 ```
     extra_hosts:
       - "ws.audioscrobbler.com:192.168.1.2"
 ```
-6. Start Navidrome with `docker compose up -d` and enable `Scrobble to LastFM`. This should launch a callback to the actual LastFM site in a new tab. This can be accepted and closed.
+5. Start Navidrome with `docker compose up -d` and enable `Scrobble to LastFM`. This should launch a callback to the actual LastFM site in a new tab. This can be accepted and closed.
 
 ## Multi-Scrobbler
 1. Create a <a href="https://foxxmd.github.io/multi-scrobbler/docs/configuration/#lastfm-source">LastFM Source</a> and set the API keys to the same as Navidrome and the Proxy.
