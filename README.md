@@ -15,7 +15,7 @@ Because Navidrome and Multi-Scrobbler both communicate directly with LastFM (and
 
 The Proxy container generates and makes use of a certificate that when used with changed hosts on Navidrome and Multi-Scrobbler, tricks them into thinking they are communicating with the real LastFM API (`ws.audioscrobbler.com`). Unfortunately because of this, the Proxy container needs ports 80 and 443 open to receive API calls. This might be able to be rectified with a reverse proxy or Docker network, but I haven't looked into them.
 
-Because of this interception, scrobbles from Navidrome are instead sent to the container and saved to its database, allowing for Multi-Scrobbler to check it periodically for new scrobbles. Other unrelated API calls are forwarded to the real LastFM client (like if you want to scrobble to an actual LastFM account).
+Because of this interception, scrobbles from Navidrome are instead sent to the container and saved to its database, allowing for Multi-Scrobbler to check it periodically for new scrobbles. Other unrelated API calls are forwarded to the real LastFM API (like if you want to scrobble to an actual LastFM account in Multi-Scrobbler).
 
 If Navidrome and Multi-Scrobbler implemented the ability to configure a custom URL for LastFM integrations, this wouldn't need to be as complex.
 </details>
@@ -30,7 +30,7 @@ I do not have any affiliation with or connection to LastFM Ltd, CBS Interactive 
 # Installation
 ## LastFM-Proxy
 1. Download the source code from this repository and place it onto your host.
-2. Configure the `docker-compose.yml` file with API keys of your choosing (You can leave them as default if you want, just remember for <a href="https://www.navidrome.org/docs/usage/configuration-options/#advanced-configuration">Navidrome</a> and <a href="https://foxxmd.github.io/multi-scrobbler/docs/configuration/#lastfm-source">Multi-Scrobbler</a> to set with the same API keys as in the Proxy's compose.)
+2. Configure the `docker-compose.yml` file with API keys of your choosing. (You can leave them as default if you want, just remember for <a href="https://www.navidrome.org/docs/usage/configuration-options/#advanced-configuration">Navidrome</a> and <a href="https://foxxmd.github.io/multi-scrobbler/docs/configuration/#lastfm-source">Multi-Scrobbler</a> to set with the same API keys as in the Proxy's compose.)
 3. The ENV variable `RETENTION_PERIOD` can be set to periodically clear entries from the database older than what is configured (hour, day, week, month, never)
 4. Run `docker compose up -d` to launch the container. A certs folder will be made with `lastfm-proxy.crt` inside.
 5. Note the IP of the host where the container is running as well as the path of the certificate for configuring the containers below.
