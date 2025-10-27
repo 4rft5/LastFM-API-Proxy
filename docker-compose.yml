@@ -1,6 +1,6 @@
 services:
   lastfm-proxy:
-    build: .
+    image: ghcr.io/4rft5/lastfm-api-proxy:latest
     container_name: lastfm-proxy
     ports:
       - "80:80"
@@ -13,4 +13,5 @@ services:
       - LASTFM_API_SECRET=exampleapisecret
       - DB_PATH=/data/scrobbles.db
       - RETENTION_PERIOD=month
+
     restart: unless-stopped
