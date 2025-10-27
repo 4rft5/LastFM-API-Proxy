@@ -45,12 +45,12 @@ I do not have any affiliation with or connection to LastFM Ltd, CBS Interactive 
 ```
 entrypoint: sh -c "apk add --no-cache ca-certificates && update-ca-certificates && /app/navidrome"
 ```
-6. Lastly, add the new host for `ws.audioscrobbler.com` with the host IP of where the Proxy is: 
+5. Lastly, add the new host for `ws.audioscrobbler.com` with the host IP of where the Proxy is: 
 ```
     extra_hosts:
       - "ws.audioscrobbler.com:192.168.1.2"
 ```
-5. Start Navidrome with `docker compose up -d` and enable `Scrobble to LastFM`. This should launch a callback to the actual LastFM site in a new tab. This can be accepted and closed.
+6. Start Navidrome with `docker compose up -d` and enable `Scrobble to LastFM`. This should launch a callback to the actual LastFM site in a new tab. This can be accepted and closed.
 
 ## Multi-Scrobbler
 1. Create a <a href="https://foxxmd.github.io/multi-scrobbler/docs/configuration/#lastfm-source">LastFM Source</a> and set the API keys to the same as Navidrome and the Proxy.
@@ -58,7 +58,7 @@ entrypoint: sh -c "apk add --no-cache ca-certificates && update-ca-certificates 
 ```
 - NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/lastfm-proxy.crt
 ```
-2. Add the cert to the compose volumes section:
+3. Add the cert to the compose volumes section:
 ```
 - /path/to/lastfm-proxy.crt:/usr/local/share/ca-certificates/lastfm-proxy.crt:ro
 ```
@@ -67,7 +67,7 @@ entrypoint: sh -c "apk add --no-cache ca-certificates && update-ca-certificates 
     extra_hosts:
       - "ws.audioscrobbler.com:192.168.1.2"
 ```
-4. Start Multi-Scrobbler with `docker-compose up -d` and verify the LastFM Source is available. You will need to authenticate with another actual LastFM callback which can be accepted and closed.
+5. Start Multi-Scrobbler with `docker-compose up -d` and verify the LastFM Source is available. You will need to authenticate with another actual LastFM callback which can be accepted and closed.
 
 # Testing
 
