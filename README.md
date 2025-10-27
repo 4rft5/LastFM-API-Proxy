@@ -92,7 +92,9 @@ In the Multi-Scrobbler ui, under `LastFM (Source)` should now be "Tracks Discove
 
 # Contributions
 
-Contributions to the Proxy would be very welcome. I'm unsure at this point what could be added, but would welcome PRs with new features if anyone wants to submit them.
+Contributions to the Proxy would be very welcome, namely with:
+
+Some kind of remote proxy/network support so ports 80 and 443 don't have to be exposed. (I may handle this myself if it bothers me enough and/or I come up with a better solution.)
 
 # Troubleshooting
 
