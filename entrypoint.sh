@@ -34,10 +34,8 @@ EOF
     chmod 600 /app/certs/key.pem
     
     echo "Certificate generated successfully!"
-    ls -la /app/certs/
 else
     echo "Certificate already exists:"
-    ls -la /app/certs/
 fi
 
 cp /app/certs/cert.pem /app/certs/lastfm-proxy.crt
