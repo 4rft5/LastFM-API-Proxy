@@ -62,7 +62,7 @@ entrypoint: sh -c "apk add --no-cache ca-certificates && update-ca-certificates 
 ```
 - /path/to/lastfm-proxy.crt:/usr/local/share/ca-certificates/lastfm-proxy.crt:ro
 ```
-4. Add the new host for `ws.audioscrobbler.com`: 
+4. Add the new host for `ws.audioscrobbler.com` with the host IP of where the Proxy is: 
 ```
     extra_hosts:
       - "ws.audioscrobbler.com:192.168.1.2"
