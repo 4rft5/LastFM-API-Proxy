@@ -54,7 +54,7 @@ entrypoint: sh -c "apk add --no-cache ca-certificates && update-ca-certificates 
 
 ## Multi-Scrobbler
 1. Create a <a href="https://foxxmd.github.io/multi-scrobbler/docs/configuration/#lastfm-source">LastFM Source</a> and set the API keys to the same as Navidrome and the Proxy.
-2. Add the ENV varaible for the cert to compose:
+2. Add the ENV variable for the cert to compose:
 ```
 - NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/lastfm-proxy.crt
 ```
