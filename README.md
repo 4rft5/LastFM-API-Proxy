@@ -4,7 +4,7 @@ An open source reimplementation of the LastFM API that can be hosted locally.
 # Information
 This is a local implementation of the LastFM API intended for use with <a href="https://github.com/navidrome/navidrome">Navidrome</a> and <a href="https://github.com/FoxxMD/multi-scrobbler">Multi-Scrobbler</a> and possibly more services if configured correctly.
 
-As of right now, Navidrome does not directly <a href="https://github.com/navidrome/navidrome/issues/593">scrobble plays reliably when offline</a>, causing issues when using either <a href="https://github.com/BLeeEZ/amperfy/issues/461">third party clients or apps</a>. However, offline scrobbles are correctly passed when using the <a href="https://www.reddit.com/r/navidrome/comments/17eo3w6/navidrome_lastfm_scrobbles_are_client_sided_or/">built in LastFM (and potentially ListenBrainz) APIs in Navidrome</a>.
+As of right now, Navidrome does not directly <a href="https://github.com/navidrome/navidrome/issues/593">scrobble plays reliably when offline</a>, causing issues when using either <a href="https://github.com/BLeeEZ/amperfy/issues/461">third party clients or apps</a>. However, offline scrobbles are correctly passed when using the built in LastFM (and potentially ListenBrainz) APIs in Navidrome (see the "scrobble plays reliably link" for more info).
 
 This container is intended to be ran locally to intercept those API calls to a local database, rather than needing an <a href="https://bsky.app/profile/4rft5.com/post/3m44fxmlvi22g">external (or two) LastFM account(s)</a>.
 
