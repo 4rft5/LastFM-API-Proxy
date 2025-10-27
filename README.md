@@ -96,6 +96,8 @@ Contributions to the Proxy would be very welcome, namely with:
 
 Some kind of remote proxy/network support so ports 80 and 443 don't have to be exposed. (I may handle this myself if it bothers me enough and/or I come up with a better solution.)
 
+Now Playing support (right now it doesn't log any of that, but I don't see why it couldn't be added.
+
 # Troubleshooting
 
 1. Ensure that the certificate is properly configured in the compose files volume section for Multi-Scrobbler and Navidrome.
