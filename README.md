@@ -4,9 +4,9 @@ An open source reimplementation of the LastFM API that can be hosted locally.
 # Information
 This is a local implementation of the LastFM API intended for use with <a href="https://github.com/navidrome/navidrome">Navidrome</a> and <a href="https://github.com/FoxxMD/multi-scrobbler">Multi-Scrobbler</a> and possibly more services if configured correctly.
 
-As of right now, Navidrome does not directly scrobble plays reliably when offline, causing issues when either using third party clients or apps. However, offline scrobbles are correctly passed when using the built in LastFM (and potentially ListenBrainz) APIs in Navidrome.
+As of right now, Navidrome does not directly <a href="https://github.com/navidrome/navidrome/issues/593">mscrobble plays reliably when offline</a>, causing issues when using either <a href="https://github.com/BLeeEZ/amperfy/issues/461">third party clients or apps</a>. However, offline scrobbles are correctly passed when using the <a href="https://www.reddit.com/r/navidrome/comments/17eo3w6/navidrome_lastfm_scrobbles_are_client_sided_or/">built in LastFM (and potentially ListenBrainz) APIs in Navidrome</a>.
 
-This container is intended to be ran locally to intercept those API calls to a local database, rather than needing an external (or two) LastFM account(s).
+This container is intended to be ran locally to intercept those API calls to a local database, rather than needing an <a href="https://bsky.app/profile/4rft5.com/post/3m44fxmlvi22g">external (or two) LastFM account(s)</a<.
 
 Because Navidrome and Multi-Scrobbler both communicate directly with LastFM (and as far as I know, this is the first LastFM API Proxy), there is no configurable URL section for either, so a little network trickery needs to be done in order for this container to work. You can read the `How It Works` section for more information.
 
@@ -15,7 +15,7 @@ Because Navidrome and Multi-Scrobbler both communicate directly with LastFM (and
 
 The Proxy container generates and makes use of a certificate that when used with changed hosts on Navidrome and Multi-Scrobbler, tricks them into thinking they are communicating with the real LastFM API (`ws.audioscrobbler.com`). Unfortunately because of this, the Proxy container needs ports 80 and 443 open to receive API calls. This might be able to be rectified with a reverse proxy or Docker network, but I haven't looked into them.
 
-Because of this interception, scrobbles from Navidrome are instead sent to the container and saved to its database, allowing for Multi-Scrobbler to check it periodically for new scrobbles. Other unrelated API calls are forwarded to the real LastFM API (like if you want to scrobble to an actual LastFM account in Multi-Scrobbler).
+Because of this interception, scrobbles from Navidrome are instead sent to the container and saved to its database, allowing for Multi-Scrobbler to check it periodically for new scrobbles. Other unrelated API calls are forwarded to the real LastFM API <a href="https://foxxmd.github.io/multi-scrobbler/docs/configuration/#lastfm">(like if you want to scrobble to an actual LastFM account in Multi-Scrobbler)</a>.
 
 If Navidrome and Multi-Scrobbler implemented the ability to configure a custom URL for LastFM integrations, this wouldn't need to be as complex.
 </details>
