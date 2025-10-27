@@ -24,7 +24,7 @@ If Navidrome and Multi-Scrobbler implemented the ability to configure a custom U
 <summary>Disclaimer</summary>
 This container was partially written with Claude.ai as part of a college Python assignment to use AI in part to make an API "do something useful". I wouldn't recommend exposing this container to the open internet.
 
-I do not have any affilication or connection to LastFM Ltd, CBS Interactive or Paramount. Use at your own risk.
+I do not have any affiliation with or connection to LastFM Ltd, CBS Interactive or Paramount. Use at your own risk.
 </details>
 
 # Installation
