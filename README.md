@@ -30,7 +30,7 @@ I do not have any affiliation with or connection to LastFM Ltd, CBS Interactive 
 # Installation
 ## LastFM-Proxy
 1. Download the `docker-compose.yml` file from this repository and place it onto your host.
-2. Configure the compose file with API keys of your choosing. (You can leave them as default if you want, just remember for <a href="https://github.com/navidrome/navidrome">Navidrome</a> and <a href="https://github.com/FoxxMD/multi-scrobbler">Multi-Scrobbler</a> to set with the same API keys as in the Proxy's compose.)
+2. Configure the compose file with [LastFM API Keys](https://www.last.fm/api/authentication).
 3. The ENV variable `RETENTION_PERIOD` can be set to periodically clear entries from the database older than what is configured (hour, day, week, month, never)
 4. Run `docker compose up -d` to launch the container. A certs folder will be made with `lastfm-proxy.crt` inside.
 5. Note the IP of the host where the container is running as well as the path of the certificate for configuring the containers below.
